@@ -82,7 +82,7 @@ brew install python3
 # brew install sfnt2woff-zopfli
 # brew install woff2
 brew tap homebrew/cask-fonts
-brew cask install font-sauce-code-powerline
+brew cask install font-source-code-pro-for-powerline
 brew cask install font-source-code-pro
 brew cask install font-fira-code
 
