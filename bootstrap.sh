@@ -37,10 +37,13 @@ cp .gitconfig ~/.gitconfig
 # make zsh default
 sudo sh -c 'echo /usr/local/bin/zsh >> /etc/shells'
 sudo chsh -s $(which zsh)
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmysh/ohmyzsh/master/tools/install.sh)"
 cp ./zsh/gentoo_minimal.zsh-theme ~/.oh-my-zsh/themes/
 cp ./zsh/.zshrc ~/
 
-# link to sublime & vscode
+# link to vscode
 mkdir -p ~/Applications/
 sudo ln -s /Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code /usr/local/bin/code
+
+cp .vimrc ~/
+cp -r .vim ~/
