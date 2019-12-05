@@ -621,8 +621,8 @@ sleep 2
 osascript -e 'quit app "iTerm"'
 # Show tab bar in FullScreen
 defaults write com.googlecode.iterm2 ShowFullScreenTabBar -bool true
-# Change the name of the bookmark to tmux
-/usr/libexec/PlistBuddy -c "Set 'New Bookmarks':0:'Name' tmux" ~/Library/Preferences/com.googlecode.iTerm2.plist
+# # Change the name of the bookmark to tmux
+# /usr/libexec/PlistBuddy -c "Set 'New Bookmarks':0:'Name' tmux" ~/Library/Preferences/com.googlecode.iTerm2.plist
 # Set font to Roboto Mono for Powerline 14px
 /usr/libexec/PlistBuddy -c "Set 'New Bookmarks':0:'Normal Font' RobotoMonoForPowerline-Regular 14" ~/Library/Preferences/com.googlecode.iTerm2.plist
 /usr/libexec/PlistBuddy -c "Set 'New Bookmarks':0:'Non Ascii Font' RobotoMonoForPowerline-Regular 14" ~/Library/Preferences/com.googlecode.iTerm2.plist
