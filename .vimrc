@@ -1,3 +1,11 @@
+set fileencodings=ucs-bom,utf-8,utf-16,gbk,big5,gb18030,latin1
+"set enc=utf8
+"set fencs=utf8,gbk,gb2312,gb18030
+
+set autoindent
+set autoread
+
+
 " Use the Solarized Dark theme
 set background=dark
 colorscheme solarized
@@ -9,6 +17,8 @@ set nocompatible
 set clipboard=unnamed
 " Enhance command-line completion
 set wildmenu
+set wildmode=longest:list,full
+
 " Allow cursor keys in insert mode
 set esckeys
 " Allow backspace in insert mode
@@ -48,9 +58,13 @@ syntax on
 set cursorline
 " Make tabs as wide as two spaces
 set tabstop=2
+set expandtab
+set softtabstop=2
 " Show “invisible” characters
 set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_
 set list
+set listchars=trail:␣
+
 " Highlight searches
 set hlsearch
 " Ignore case of searches

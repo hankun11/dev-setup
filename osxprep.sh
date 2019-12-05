@@ -12,7 +12,7 @@ echo "Updating OSX.  If this requires a restart, run the script again."
 # Install all available updates
 sudo softwareupdate -ia --verbose
 # Install only recommended available updates
-#sudo softwareupdate -ir --verbose
+# sudo softwareupdate -ir --verbose
 
 echo "------------------------------"
 echo "Installing Xcode Command Line Tools."
