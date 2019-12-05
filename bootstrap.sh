@@ -24,7 +24,7 @@
 set -e
 
 # setup hostname
-sudo scutil --set ComputerName hk-mba
+# sudo scutil --set LocalHostName hk-mba
 
 # setup dotfiles
 cp .bash_profile .bashrc ~/
@@ -37,9 +37,13 @@ cp .gitconfig ~/.gitconfig
 # make zsh default
 sudo sh -c 'echo /usr/local/bin/zsh >> /etc/shells'
 sudo chsh -s $(which zsh)
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmysh/ohmyzsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 cp ./zsh/gentoo_minimal.zsh-theme ~/.oh-my-zsh/themes/
 cp ./zsh/.zshrc ~/
+source ~/.zshrc
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
 
 # link to vscode
 mkdir -p ~/Applications/

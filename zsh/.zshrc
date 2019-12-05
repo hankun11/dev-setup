@@ -5,7 +5,8 @@ export ZSH=~/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="gentoo_minimal"
+# ZSH_THEME="robbyrussell"
+ZSH_THEME="agnoster"
 
 # Uncomment the following line to use case-sensitive completion.
 CASE_SENSITIVE="true"
@@ -49,26 +50,14 @@ export UPDATE_ZSH_DAYS=30
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(autojump zsh-syntax-highlighting osx zsh-autosuggestions
-)
+plugins=(z zsh-syntax-highlighting osx zsh-autosuggestions)
 
 # User configuration
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 source $ZSH/oh-my-zsh.sh
 export LANG=en_US.UTF-8
-export EDITOR='nvim'
 
 # Alias
 # alias vim="nvim"
-alias grep="grep --color=auto"
-alias ll='ls -l'
-
-
-case "$TERM" in
-    xterm)
-        export TERM=xterm-256color
-        ;;
-    screen)
-        export TERM=screen-256color
-        ;;
-esac
+# alias grep="grep --color=auto"
+# alias ll='ls -l'

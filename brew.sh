@@ -70,7 +70,7 @@ brew install python3
 # grep -q "$LINE" ~/.extra || echo "$LINE" >> ~/.extra
 
 # # Install more recent versions of some OS X tools.
-# brew install vim --override-system-vi
+brew install vim --override-system-vi
 # brew install homebrew/dupes/grep
 # brew install homebrew/dupes/openssh
 # brew install homebrew/dupes/screen
@@ -82,6 +82,7 @@ brew install python3
 # brew install sfnt2woff-zopfli
 # brew install woff2
 brew tap homebrew/cask-fonts
+brew cask install font-roboto-mono-for-powerline
 brew cask install font-source-code-pro-for-powerline
 brew cask install font-source-code-pro
 brew cask install font-fira-code
