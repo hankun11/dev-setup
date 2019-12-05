@@ -561,7 +561,7 @@ tell application "Terminal"
     (* Open the custom theme so that it gets added to the list
        of available terminal themes (note: this will open two
        additional terminal windows). *)
-    do shell script "open '$HOME/init/" & themeName & ".terminal'"
+    do shell script "open '$(pwd)/init/" & themeName & ".terminal'"
 
     (* Wait a little bit to ensure that the custom theme is added. *)
     delay 1
@@ -629,11 +629,11 @@ defaults write com.googlecode.iterm2 ShowFullScreenTabBar -bool true
 
 # Import Solarized Theme
 /usr/libexec/PlistBuddy -c "Add 'Custom Color Presets':'Solarized Dark' dict" ~/Library/Preferences/com.googlecode.iTerm2.plist
-/usr/libexec/PlistBuddy -c "Merge '$(pwd)/$(dirname $0)/iterm2/Solarized Dark.itermcolors' 'Custom Color Presets':'Solarized Dark'" ~/Library/Preferences/com.googlecode.iTerm2.plist
+/usr/libexec/PlistBuddy -c "Merge '$(pwd)/iterm2/Solarized Dark.itermcolors' 'Custom Color Presets':'Solarized Dark'" ~/Library/Preferences/com.googlecode.iTerm2.plist
 
 # Import Base16 - chalk Theme
 /usr/libexec/PlistBuddy -c "Add 'Custom Color Presets':'Base16 Chalk Dark' dict" ~/Library/Preferences/com.googlecode.iTerm2.plist
-/usr/libexec/PlistBuddy -c "Merge '$(pwd)/$(dirname $0)/iterm2/Base16 Chalk Dark.itermcolors' 'Custom Color Presets':'Base16 Chalk Dark'" ~/Library/Preferences/com.googlecode.iTerm2.plist
+/usr/libexec/PlistBuddy -c "Merge '$(pwd)/iterm2/Base16 Chalk Dark.itermcolors' 'Custom Color Presets':'Base16 Chalk Dark'" ~/Library/Preferences/com.googlecode.iTerm2.plist
 
 # Apply Solarized Theme in default profile
 for color in \
@@ -645,7 +645,7 @@ for color in \
 
   /usr/libexec/PlistBuddy -c "Delete :'New Bookmarks':0:'$color'" ~/Library/Preferences/com.googlecode.iterm2.plist
 done
-/usr/libexec/PlistBuddy -c "Merge '$(pwd)/$(dirname $0)/iterm2/Base16 Chalk Dark.itermcolors' 'New Bookmarks':0" ~/Library/Preferences/com.googlecode.iterm2.plist
+/usr/libexec/PlistBuddy -c "Merge '$(pwd)/iterm2/Base16 Chalk Dark.itermcolors' 'New Bookmarks':0" ~/Library/Preferences/com.googlecode.iterm2.plist
 
 # Set ANSI black color bright to 74,74,74 (needed for Solarized Dark)
 # /usr/libexec/PlistBuddy -c "Set 'New Bookmarks':0:'Ansi 8 Color':'Blue Component' 74" ~/Library/Preferences/com.googlecode.iterm2.plist
