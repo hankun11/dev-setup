@@ -545,52 +545,52 @@ defaults write com.apple.dock wvous-tr-modifier -int 0
 # Only use UTF-8 in Terminal.app
 defaults write com.apple.terminal StringEncodings -array 4
 
-# Use a modified version of the Solarized Dark theme by default in Terminal.app
-osascript <<EOD
+# # Use a modified version of the Solarized Dark theme by default in Terminal.app
+# osascript <<EOD
 
-tell application "Terminal"
+# tell application "Terminal"
 
-    local allOpenedWindows
-    local initialOpenedWindows
-    local windowID
-    set themeName to "Solarized Dark xterm-256color"
+#     local allOpenedWindows
+#     local initialOpenedWindows
+#     local windowID
+#     set themeName to "Solarized Dark xterm-256color"
 
-    (* Store the IDs of all the open terminal windows. *)
-    set initialOpenedWindows to id of every window
+#     (* Store the IDs of all the open terminal windows. *)
+#     set initialOpenedWindows to id of every window
 
-    (* Open the custom theme so that it gets added to the list
-       of available terminal themes (note: this will open two
-       additional terminal windows). *)
-    do shell script "open '$(pwd)/init/" & themeName & ".terminal'"
+#     (* Open the custom theme so that it gets added to the list
+#        of available terminal themes (note: this will open two
+#        additional terminal windows). *)
+#     do shell script "open '$(pwd)/init/" & themeName & ".terminal'"
 
-    (* Wait a little bit to ensure that the custom theme is added. *)
-    delay 1
+#     (* Wait a little bit to ensure that the custom theme is added. *)
+#     delay 1
 
-    (* Set the custom theme as the default terminal theme. *)
-    set default settings to settings set themeName
+#     (* Set the custom theme as the default terminal theme. *)
+#     set default settings to settings set themeName
 
-    (* Get the IDs of all the currently opened terminal windows. *)
-    set allOpenedWindows to id of every window
+#     (* Get the IDs of all the currently opened terminal windows. *)
+#     set allOpenedWindows to id of every window
 
-    repeat with windowID in allOpenedWindows
+#     repeat with windowID in allOpenedWindows
 
-        (* Close the additional windows that were opened in order
-           to add the custom theme to the list of terminal themes. *)
-        if initialOpenedWindows does not contain windowID then
-            close (every window whose id is windowID)
+#         (* Close the additional windows that were opened in order
+#            to add the custom theme to the list of terminal themes. *)
+#         if initialOpenedWindows does not contain windowID then
+#             close (every window whose id is windowID)
 
-        (* Change the theme for the initial opened terminal windows
-           to remove the need to close them in order for the custom
-           theme to be applied. *)
-        else
-            set current settings of tabs of (every window whose id is windowID) to settings set themeName
-        end if
+#         (* Change the theme for the initial opened terminal windows
+#            to remove the need to close them in order for the custom
+#            theme to be applied. *)
+#         else
+#             set current settings of tabs of (every window whose id is windowID) to settings set themeName
+#         end if
 
-    end repeat
+#     end repeat
 
-end tell
+# end tell
 
-EOD
+# EOD
 
 # Enable “focus follows mouse” for Terminal.app and all X11 apps
 # i.e. hover over a window and start typing in it without clicking first
@@ -627,25 +627,25 @@ defaults write com.googlecode.iterm2 ShowFullScreenTabBar -bool true
 /usr/libexec/PlistBuddy -c "Set 'New Bookmarks':0:'Normal Font' RobotoMonoForPowerline-Regular 14" ~/Library/Preferences/com.googlecode.iTerm2.plist
 /usr/libexec/PlistBuddy -c "Set 'New Bookmarks':0:'Non Ascii Font' RobotoMonoForPowerline-Regular 14" ~/Library/Preferences/com.googlecode.iTerm2.plist
 
-# Import Solarized Theme
-/usr/libexec/PlistBuddy -c "Add 'Custom Color Presets':'Solarized Dark' dict" ~/Library/Preferences/com.googlecode.iTerm2.plist
-/usr/libexec/PlistBuddy -c "Merge '$(pwd)/iterm2/Solarized Dark.itermcolors' 'Custom Color Presets':'Solarized Dark'" ~/Library/Preferences/com.googlecode.iTerm2.plist
+# # Import Solarized Theme
+# /usr/libexec/PlistBuddy -c "Add 'Custom Color Presets':'Solarized Dark' dict" ~/Library/Preferences/com.googlecode.iTerm2.plist
+# /usr/libexec/PlistBuddy -c "Merge '$(pwd)/iterm2/Solarized Dark.itermcolors' 'Custom Color Presets':'Solarized Dark'" ~/Library/Preferences/com.googlecode.iTerm2.plist
 
-# Import Base16 - chalk Theme
-/usr/libexec/PlistBuddy -c "Add 'Custom Color Presets':'Base16 Chalk Dark' dict" ~/Library/Preferences/com.googlecode.iTerm2.plist
-/usr/libexec/PlistBuddy -c "Merge '$(pwd)/iterm2/Base16 Chalk Dark.itermcolors' 'Custom Color Presets':'Base16 Chalk Dark'" ~/Library/Preferences/com.googlecode.iTerm2.plist
+# # Import Base16 - chalk Theme
+# /usr/libexec/PlistBuddy -c "Add 'Custom Color Presets':'Base16 Chalk Dark' dict" ~/Library/Preferences/com.googlecode.iTerm2.plist
+# /usr/libexec/PlistBuddy -c "Merge '$(pwd)/iterm2/Base16 Chalk Dark.itermcolors' 'Custom Color Presets':'Base16 Chalk Dark'" ~/Library/Preferences/com.googlecode.iTerm2.plist
 
-# Apply Solarized Theme in default profile
-for color in \
-  "Ansi 0 Color" "Ansi 1 Color" "Ansi 2 Color" "Ansi 3 Color" "Ansi 4 Color" \
-  "Ansi 5 Color" "Ansi 6 Color" "Ansi 7 Color" "Ansi 8 Color" "Ansi 9 Color" \
-  "Ansi 10 Color" "Ansi 11 Color" "Ansi 12 Color" "Ansi 13 Color" "Ansi 14 Color" \
-  "Ansi 15 Color" "Background Color" "Bold Color" "Cursor Color" "Cursor Text Color" \
-  "Foreground Color" "Selected Text Color" "Selection Color"; do
+# # Apply Solarized Theme in default profile
+# for color in \
+#   "Ansi 0 Color" "Ansi 1 Color" "Ansi 2 Color" "Ansi 3 Color" "Ansi 4 Color" \
+#   "Ansi 5 Color" "Ansi 6 Color" "Ansi 7 Color" "Ansi 8 Color" "Ansi 9 Color" \
+#   "Ansi 10 Color" "Ansi 11 Color" "Ansi 12 Color" "Ansi 13 Color" "Ansi 14 Color" \
+#   "Ansi 15 Color" "Background Color" "Bold Color" "Cursor Color" "Cursor Text Color" \
+#   "Foreground Color" "Selected Text Color" "Selection Color"; do
 
-  /usr/libexec/PlistBuddy -c "Delete :'New Bookmarks':0:'$color'" ~/Library/Preferences/com.googlecode.iterm2.plist
-done
-/usr/libexec/PlistBuddy -c "Merge '$(pwd)/iterm2/Base16 Chalk Dark.itermcolors' 'New Bookmarks':0" ~/Library/Preferences/com.googlecode.iterm2.plist
+#   /usr/libexec/PlistBuddy -c "Delete :'New Bookmarks':0:'$color'" ~/Library/Preferences/com.googlecode.iterm2.plist
+# done
+# /usr/libexec/PlistBuddy -c "Merge '$(pwd)/iterm2/Base16 Chalk Dark.itermcolors' 'New Bookmarks':0" ~/Library/Preferences/com.googlecode.iterm2.plist
 
 # Set ANSI black color bright to 74,74,74 (needed for Solarized Dark)
 # /usr/libexec/PlistBuddy -c "Set 'New Bookmarks':0:'Ansi 8 Color':'Blue Component' 74" ~/Library/Preferences/com.googlecode.iterm2.plist
