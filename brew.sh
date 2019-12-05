@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-set -e
 
 # Install command-line tools using Homebrew.
 
@@ -21,7 +20,7 @@ fi
 brew update
 
 # Upgrade any already-installed formulae.
-brew upgrade --all
+brew upgrade
 
 # Install GNU core utilities (those that come with OS X are outdated).
 # Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
@@ -150,10 +149,10 @@ brew install tree
 
 # Core casks
 # brew cask install --appdir="/Applications" alfred
-brew cask install --appdir="~/Applications" iterm2
-brew cask install --appdir="~/Applications" visual-studio-code
-# brew cask install --appdir="~/Applications" java
-# brew cask install --appdir="~/Applications" xquartz
+brew cask install --appdir="/Applications" iterm2
+brew cask install --appdir="/Applications" visual-studio-code
+# brew cask install --appdir="/Applications" java
+# brew cask install --appdir="/Applications" xquartz
 
 # # Development tool casks
 # brew cask install --appdir="/Applications" sublime-text
