@@ -60,7 +60,7 @@ brew install wget
 # brew install narwhal
 
 # Install Python
-brew install python
+brew install python2
 brew install python3
 
 # # Install ruby-build and rbenv

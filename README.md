@@ -335,7 +335,6 @@ Then start working with the installed packages, for example:
 
 [Section 3: Python Data Analysis](#section-3-python-data-analysis) describes the installed packages and usage.
 
-### aws.sh script
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/donnemartin/dev-setup-resources/master/res/aws.png">
@@ -347,45 +346,6 @@ To set up a development environment to work with Spark, Hadoop MapReduce, and Am
     $ ./aws.sh
 
 [Section 4: Big Data, AWS, and Heroku](#section-4-big-data-aws-and-heroku) describes the installed packages and usage.
-
-### datastores.sh script
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/donnemartin/dev-setup-resources/master/res/datastores.png">
-  <br/>
-</p>
-
-To set up common data stores, run the `datastores.sh` script:
-
-    $ ./datastores.sh
-
-[Section 5: Data Stores](#section-5-data-stores) describes the installed packages and usage.
-
-### web.sh script
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/donnemartin/dev-setup-resources/master/res/webdev.png">
-  <br/>
-</p>
-
-To set up a JavaScript web development environment, Run the `web.sh` script:
-
-    $ ./web.sh
-
-[Section 6: Web Development](#section-6-web-development) describes the installed packages and usage.
-
-### android.sh script
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/donnemartin/dev-setup-resources/master/res/android.png">
-  <br/>
-</p>
-
-To set up an Android development environment, run the `android.sh` script:
-
-    $ ./android.sh
-
-[Section 7: Android Development](#section-7-android-development) describes the installed packages and usage.
 
 ## Section 2: General Apps and Tools
 
