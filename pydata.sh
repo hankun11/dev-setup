@@ -10,7 +10,7 @@ sudo -K
   
 # Installs anaconda according to my customizations
 function install_conda {
-  bash miniconda.sh -b -p $HOME/miniconda
+  bash miniconda.sh -p $HOME/miniconda
   rm miniconda.sh
   export PATH=$HOME/miniconda/bin:$PATH
 

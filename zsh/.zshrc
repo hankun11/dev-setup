@@ -56,6 +56,7 @@ plugins=(z zsh-syntax-highlighting osx zsh-autosuggestions)
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 source $ZSH/oh-my-zsh.sh
 export LANG=en_US.UTF-8
+source $HOME/.bash_profile
 
 # Alias
 # alias vim="nvim"
