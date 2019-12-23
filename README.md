@@ -1,10 +1,6 @@
 dev-setup
 ============
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/donnemartin/dev-setup-resources/master/res/repo-header.gif">
-</p>
-
 ## Motivation
 
 Setting up a new developer machine can be an **ad-hoc, manual, and time-consuming** process.  `dev-setup` aims to **simplify** the process with **easy-to-understand instructions** and **dotfiles/scripts** to **automate the setup** of the following:
@@ -14,11 +10,6 @@ Setting up a new developer machine can be an **ad-hoc, manual, and time-consumin
 * **Developer tools**: Vim, bash, tab completion, curl, git, GNU core utils, Python, Ruby, etc
 * **Developer apps**: iTerm2, Sublime Text, Atom, VirtualBox, Vagrant, Docker, Chrome, etc
 * **Python data analysis**: IPython Notebook, NumPy, Pandas, Scikit-Learn, Matplotlib, etc
-* **Big Data platforms**: Spark (with IPython Notebook integration) and MapReduce
-* **Cloud services**: Amazon Web Services (Boto, AWS CLI, S3cmd, etc) and Heroku
-* **Common data stores**: MySQL, PostgreSQL, MongoDB, Redis, and Elasticsearch
-* **Javascript web development**: Node.js, JSHint, and Less
-* **Android development**: Java, Android SDK, Android Studio, IntelliJ IDEA
 
 ### But...I Don't Need All These Tools!
 
@@ -30,17 +21,7 @@ If you're interested in automation, `dev-setup` provides a customizable [setup s
 
 [Credits](#credits): This repo builds on the awesome work from [Mathias Bynens](https://github.com/mathiasbynens) and [Nicolas Hery](https://github.com/nicolashery).
 
-### For Automation, What About Vagrant, Docker, or Boxen?
-
-[Vagrant](#vagrant) and [Docker](#docker) are great tools and are set up by this repo. I've found that Vagrant works well to ensure dev matches up with test and production tiers. I've only started playing around with Docker for side projects and it looks very promising. However, for Mac users, Docker and Vagrant both rely on **virtual machines**, which have their own considerations/pros/cons.
-
-[Boxen](https://boxen.github.com/) is a cool solution, although some might find it better geared towards "more mature companies or devops teams". I've seen some discussions of [difficulties as it is using Puppet under the hood](https://github.com/boxen/our-boxen/issues/742).
-
 This repo takes a more **light-weight** approach to automation using a combination of **Homebrew, Homebrew Cask, and shell scripts** to do basic system setup.  It also provides **easy-to understand instructions** for installation, configuration, and usage for each developer app or tool.
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/donnemartin/dev-setup-resources/master/res/iterm2.png">
-</p>
 
 ### Sections Summary
 * Section 1 contains the dotfiles/scripts and instructions to set up your system.
@@ -61,14 +42,7 @@ This repo takes a more **light-weight** approach to automation using a combinati
     * Sets up OS X defaults geared towards developers
 * [pydata.sh script](#pydatash-script)
     * Sets up python for data analysis
-* [aws.sh script](#awssh-script)
-    * Sets up Spark, Hadoop MapReduce, and Amazon Web Services
-* [datastores.sh script](#datastoressh-script)
-    * Sets up common data stores
-* [web.sh script](#websh-script)
-    * Sets up JavaScript web development
-* [android.sh script](#androidsh-script)
-    * Sets up Android development
+
 
 ## Section 2: General Apps and Tools
 
@@ -129,7 +103,7 @@ Run `bootstrap.sh`, `osxprep.sh`, `brew.sh`, and `osx.sh`:
 
 Run `bootstrap.sh`, `osxprep.sh`, `brew.sh`, and `osx.sh`, `pydata.sh`, `aws.sh`, and `datastores.sh`:
 
-    $ ./.dots bootstrap osxprep brew osx pydata aws datastores
+    $ ./.dots bootstrap osxprep brew osx pydata 
 
 #### Running without Git
 
@@ -149,14 +123,6 @@ Run `bootstrap.sh`, `osxprep.sh`, `brew.sh`, and `osx.sh`, `pydata.sh`, `aws.sh`
     * Sets up OS X defaults geared towards developers
 * [pydata.sh](https://github.com/donnemartin/dev-setup/blob/master/pydata.sh)
     * Sets up python for data analysis
-* [aws.sh](https://github.com/donnemartin/dev-setup/blob/master/aws.sh)
-    * Sets up Spark, Hadoop MapReduce, and Amazon Web Services
-* [datastores.sh](https://github.com/donnemartin/dev-setup/blob/master/datastores.sh)
-    * Sets up common data stores
-* [web.sh](https://github.com/donnemartin/dev-setup/blob/master/web.sh)
-    * Sets up JavaScript web development
-* [android.sh](https://github.com/donnemartin/dev-setup/blob/master/android.sh)
-    * Sets up Android development
 
 **Notes:**
 
@@ -333,28 +299,10 @@ Then start working with the installed packages, for example:
 
     $ ipython notebook
 
-[Section 3: Python Data Analysis](#section-3-python-data-analysis) describes the installed packages and usage.
-
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/donnemartin/dev-setup-resources/master/res/aws.png">
-  <br/>
-</p>
-
-To set up a development environment to work with Spark, Hadoop MapReduce, and Amazon Web Services, run the `aws.sh` script:
-
-    $ ./aws.sh
-
-[Section 4: Big Data, AWS, and Heroku](#section-4-big-data-aws-and-heroku) describes the installed packages and usage.
 
 ## Section 2: General Apps and Tools
 
 ### Terminal Customization
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/donnemartin/dev-setup-resources/master/res/terminal.png">
-  <br/>
-</p>
 
 Since we spend so much time in the terminal, we should try to make it a more pleasant and colorful place.
 
@@ -363,11 +311,6 @@ Since we spend so much time in the terminal, we should try to make it a more ple
 The [bootstrap.sh script](#bootstrapsh-script) and [osx.sh script](#osxsh-script) contain terminal customizations.
 
 ### iTerm2
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/donnemartin/dev-setup-resources/master/res/iterm2.png">
-  <br/>
-</p>
 
 I prefer iTerm2 over the stock Terminal, as it has some additional [great features](https://www.iterm2.com/features.html). Download and install iTerm2 (the newest version, even if it says "beta release").
 
@@ -392,11 +335,6 @@ At this point you can also change your computer's name, which shows up in this t
 Now we have a terminal we can work with!
 
 ### Vim
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/donnemartin/dev-setup-resources/master/res/vim.png">
-  <br/>
-</p>
 
 Although Sublime Text will be our main editor, it is a good idea to learn some very basic usage of [Vim](http://www.vim.org/). It is a very popular text editor inside the terminal, and is usually pre-installed on any Unix system.
 
