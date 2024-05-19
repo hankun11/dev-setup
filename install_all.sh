@@ -8,6 +8,6 @@ set -e
 
 ./brew.sh
 
-./osx.sh
+# ./osx.sh
 
 ./pydata.sh

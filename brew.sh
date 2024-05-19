@@ -13,7 +13,8 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 # Install if we don't have it
 if test ! $(which brew); then
   echo "Installing homebrew..."
-  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install)"
+  # /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
 # Make sure we’re using the latest Homebrew.
@@ -82,10 +83,11 @@ brew install vim --override-system-vi
 # brew install sfnt2woff-zopfli
 # brew install woff2
 brew tap homebrew/cask-fonts
-brew cask install font-roboto-mono-for-powerline
-brew cask install font-source-code-pro-for-powerline
-brew cask install font-source-code-pro
-brew cask install font-fira-code
+brew install --cask font-hack-nerd-font
+# brew cask install font-roboto-mono-for-powerline
+# brew cask install font-source-code-pro-for-powerline
+# brew cask install font-source-code-pro
+# brew cask install font-fira-code
 
 
 # # Install some CTF tools; see https://github.com/ctfs/write-ups.
@@ -201,6 +203,7 @@ cp ./zsh/gentoo_minimal.zsh-theme ~/.oh-my-zsh/themes/
 cp ./zsh/.zshrc ~/
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
 source ~/.zshrc
 
 
